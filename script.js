@@ -2,8 +2,8 @@ const displayInput = document.querySelector("#display");
 
 const buttons = document.querySelectorAll("button");
 
-let currentOperand = parseInt('');
-let previousOperand = parseInt('');
+let currentOperand = '';
+let previousOperand = '';
 let operator = '';
 
 buttons.forEach(button =>{
@@ -17,6 +17,7 @@ buttons.forEach(button =>{
         else if(buttonValue ==="+" || buttonValue === "-"|| buttonValue ==="/"|| buttonValue === "*"){
             previousOperand = currentOperand;
             operator = buttonValue;
+            displayInput.value  = operator
             currentOperand = '';
         }
         else if (buttonValue === "="){
@@ -33,10 +34,10 @@ buttons.forEach(button =>{
             operator = '';
             displayInput.value = '';
         }
-        else if (buttonValue = "DEL"){
-            currentOperand = currentOperand.slice(0, 1);
-            displayInput.value = currentOperand;
-        }
+        else if (buttonValue === "Del"){
+            currentOperand = currentOperand.slice(0,1);
+            displayInput.value = currentOperand;  
+``      }
     })
 })
 
@@ -65,18 +66,4 @@ const calculate = function(previousOperand,operator,currentOperand){
         return 'Error: Invalid operator'
     }
     
-    // switch(operator) {
-    //     case '+':
-    //         return num1 + num2;
-    //     case '-':
-    //         return num1 - num2;
-    //     case '/':
-    //         return num1 / num2;
-    //     case '*':
-    //         return num1 * num2; 
-    //     default:
-    //         return 0;
-    // }
 }
-// displayInput.value = buttonValue;
-//         console.log(displayInput)
