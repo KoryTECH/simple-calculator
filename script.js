@@ -2,9 +2,9 @@ const displayInput = document.querySelector("#display");
 
 const buttons = document.querySelectorAll("button");
 
-let currentOperand = '';
-let previousOperand = '';
-let operator = '';
+let currentOperand = '0';
+let previousOperand = '0';
+let operator = '0';
 
 buttons.forEach(button =>{
     button.addEventListener('click', ()=>{
@@ -67,3 +67,4 @@ const calculate = function(previousOperand,operator,currentOperand){
     }
     
 }
+
