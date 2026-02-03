@@ -17,12 +17,17 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 50px;
     width: 500px;
-    height: auto;
+    height: 100vh;
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 50px rgba(0,0,0,0.1);
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+}
+
+h1 {
+    color: white;
+    font-size: 3em;
 }
 
 input {
@@ -52,4 +57,7 @@ button {
     border: none;
     font-size: 2rem;
     font-weight: bold;
+}
+button:active {
+    transform: scale(1.1);
 }
