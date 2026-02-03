@@ -2,9 +2,9 @@ const displayInput = document.querySelector("#display");
 
 const buttons = document.querySelectorAll("button");
 
-let currentOperand = '0';
-let previousOperand = '0';
-let operator = '0';
+let currentOperand = '';
+let previousOperand = '';
+let operator = '';
 
 buttons.forEach(button =>{
     button.addEventListener('click', ()=>{
@@ -14,7 +14,7 @@ buttons.forEach(button =>{
             currentOperand += buttonValue;
             displayInput.value = currentOperand;
         }
-        else if(buttonValue ==="+" || buttonValue === "-"|| buttonValue ==="/"|| buttonValue === "*"){
+        else if(buttonValue === "+" || buttonValue === "-"|| buttonValue === "/"|| buttonValue === "*"){
             previousOperand = currentOperand;
             operator = buttonValue;
             displayInput.value  = operator
@@ -26,7 +26,6 @@ buttons.forEach(button =>{
             currentOperand = result;
             previousOperand = '';
             operator = '';
-
         }
         else if (buttonValue === "C") {
             currentOperand = '';
@@ -35,9 +34,9 @@ buttons.forEach(button =>{
             displayInput.value = '';
         }
         else if (buttonValue === "Del"){
-            currentOperand = currentOperand.slice(0,1);
+            currentOperand = currentOperand.slice(0,currentOperand.length-1);
             displayInput.value = currentOperand;  
-``      }
+        }
     })
 })
 
@@ -67,4 +66,3 @@ const calculate = function(previousOperand,operator,currentOperand){
     }
     
 }
-
